@@ -1,0 +1,20 @@
+from Funcionarios import *
+try:
+    f = Funcionario('José', 1150)
+    print(f.exibe_dados())
+
+    a = Assistente('Paulo', 1250, '2022111510027')
+    print(a.exibe_dados() + f'Matrícula: {a.matricula}\n')
+
+    t = AssistenteTecnico('Lucas', 1250, '2022111510028', 100)
+    print(t.exibe_dados())
+    print(t.exibe_dados() + f'Matrícula: {t.matricula}\n')
+
+    adm = AssistenteAdministrativo('Marcos', 1250, '2022111510029', 'NOITE')
+    print(adm.exibe_dados())
+
+except ExceptionTurno:
+    print("Turno Inválido")
+
+except ExceptionMinSalario:
+    print("Salário Mínimo Inválido")
