@@ -1,4 +1,3 @@
-from ast import While
 from Classes import *
 
 SALARIO_PRESIDENTE = 2500
