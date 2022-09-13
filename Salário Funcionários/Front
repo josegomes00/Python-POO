@@ -1,0 +1,49 @@
+from ast import While
+from Classes import *
+
+SALARIO_PRESIDENTE = 2500
+SALARIO_GERENTE = 3500
+SALARIO_DIRETOR = 5000
+
+while True:
+    try:
+        print("     CADASTRO DE FUNCIONÁRIO")
+        name = input("DIGITE O NOME DO FUNCIONÁRIO: ")
+        
+        print("\nPRESIDENTE[1]\nGERENTE[2]\nPRESIDENTE[3]\n")
+        cargo = int(input())
+        
+        print("\nNível de Formação\n\nMÉDIO COMPLETO[1]\nSUPERIOR COMPLETO[2]\nESPECIALISTA[3]\nMESTRADO COMPLETO[4]\nDOUTORADO COMPLETO[5]")
+        formacao = int(input())
+        while True:
+            if formacao == 1:
+                formacao = GrauInstrucao.MEDIO
+                break
+            elif formacao == 2:
+                formacao = GrauInstrucao.SUPERIOR
+                break
+            elif formacao == 3:
+                formacao = GrauInstrucao.ESPECIALISTA
+                break
+            elif formacao == 4:
+                formacao = GrauInstrucao.MESTRE
+                break
+            elif formacao == 5:
+                formacao = GrauInstrucao.DOUTOR
+                break
+            else:
+                print("Formação Inválida, Tente Novamente.")
+                formacao = int(input())
+        
+        if cargo == 1:
+            f = Presidente(name,SALARIO_PRESIDENTE,formacao)           
+        elif cargo == 2:
+            f = Gerente(name,SALARIO_GERENTE,formacao)
+        elif cargo == 3:
+            f = Diretor(name,SALARIO_DIRETOR,formacao)
+        break
+    
+    except Exception as fe:
+        print(fe)
+        
+print(f)
