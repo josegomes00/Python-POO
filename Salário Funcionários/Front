@@ -9,7 +9,7 @@ while True:
         print("     CADASTRO DE FUNCIONÁRIO")
         name = input("DIGITE O NOME DO FUNCIONÁRIO: ")
         
-        print("\nPRESIDENTE[1]\nGERENTE[2]\nPRESIDENTE[3]\n")
+        print("\nPRESIDENTE[1]\nGERENTE[2]\nDIRETOR[3]\n")
         cargo = int(input())
         
         print("\nNível de Formação\n\nMÉDIO COMPLETO[1]\nSUPERIOR COMPLETO[2]\nESPECIALISTA[3]\nMESTRADO COMPLETO[4]\nDOUTORADO COMPLETO[5]")
