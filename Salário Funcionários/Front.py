@@ -12,28 +12,52 @@ name = input("DIGITE O NOME DO FUNCIONÁRIO: ")
 name = name.upper()
 
 #NÍVEL DE FORMAÇÃO#
-print("\nNível de Formação\n\nMÉDIO COMPLETO[1]\nSUPERIOR COMPLETO[2]\nESPECIALIZADO[3]\nMESTRADO COMPLETO[4]\nDOUTORADO COMPLETO[5]\n")
-formacao = int(input())
-
-if formacao == 1:
-    formacao = GrauInstrucao.MEDIO
-
-elif formacao == 2:
-    formacao = GrauInstrucao.SUPERIOR
-
-elif formacao == 3:
-    formacao = GrauInstrucao.ESPECIALISTA
-
-elif formacao == 4:
-    formacao = GrauInstrucao.MESTRE
-
-elif formacao == 5:
-    formacao = GrauInstrucao.DOUTOR
-
+while True:
+    print("\nNível de Formação\n\nMÉDIO COMPLETO[1]\nSUPERIOR COMPLETO[2]\nESPECIALIZADO[3]\nMESTRADO COMPLETO[4]\nDOUTORADO COMPLETO[5]\n")
+    try:
+        formacao = int(input())
+        
+        if formacao == 1:
+            formacao = GrauInstrucao.MEDIO
+            break
+        elif formacao == 2:
+            formacao = GrauInstrucao.SUPERIOR
+            break
+        elif formacao == 3:
+            formacao = GrauInstrucao.ESPECIALISTA
+            break
+        elif formacao == 4:
+            formacao = GrauInstrucao.MESTRE
+            break
+        elif formacao == 5:
+            formacao = GrauInstrucao.DOUTOR
+            break
+        else:
+            raise Exception
+        
+    except ValueError:
+        print("Apenas Números.")
+        
+    except Exception:
+        print("Opção Inválida.")
+        
 #CARGO#
-print("\n       CARGO NA EMPRESA")
-print("\nPRESIDENTE[1]\nGERENTE[2]\nDIRETOR[3]\n")
-cargo = int(input())
+
+while True:
+    CARGOS_VALIDOS = [1,2,3]
+    try:
+        print("\n       CARGO NA EMPRESA")
+        print("\nPRESIDENTE[1]\nGERENTE[2]\nDIRETOR[3]\n")
+        cargo = int(input())
+        if cargo not in CARGOS_VALIDOS:
+            raise Exception
+        break
+    
+    except ValueError:
+        print("Apenas Números.")
+        
+    except:
+        print("Opção Inválida.")
 
 #MONTANDO FUNCIONÁRIO#
 
